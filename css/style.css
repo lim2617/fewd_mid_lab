@@ -19,6 +19,8 @@ body{
     background-color: rgba(0, 0, 0, 0.253);
     width: 100vw;
     height:100vh;
+    left: 0;
+    z-index: 1;
     display: none;
 }
 
@@ -28,8 +30,8 @@ body{
     height: 30vh;
     border-radius: 5px;
     position: absolute;
-    top: 20%;
-    left: 25%;
+    top: 25%;
+    left: 35%;
     text-align: center;
     color: #14a96d;
 }
@@ -42,6 +44,7 @@ body{
 
 .modalContent i{
     font-size: 3em;
+    cursor: pointer;
 }
 
 .header{
@@ -50,14 +53,26 @@ body{
     margin-bottom: 1.2em;
 }
 
-.header a{
+.header a, .mobileMenu a{
     color: gray;
     font-size: 1.2em;
     font-weight: bold;
     text-decoration: none;
 }
 
-.header i{
+.header a:hover{
+    font-size: 1.5em;
+    transition:all 0.5s;
+}
+
+.mobileMenu a:hover{
+    color: black;
+    opacity: 0.5;
+    background-color: rgb(219, 217, 217);
+    transition:all 1s;
+}
+
+#bar{
     display: none;
 }
 
@@ -75,20 +90,21 @@ body{
     padding-right: 2em;
 }
 
-/* .hiddenMenu{
+.mobileMenu{
     flex-direction: column;
     position: absolute;
     top: 9%;
     right: 15%;
     background-color: white;
+    z-index: 1;
+    display: none;
 }
 
-.hiddenMenu a{
-    display: none;
+.mobileMenu a{
     border: 1px solid rgb(214, 213, 213);
-    padding: 2em 6em;
+    padding: 3em 8em;
     text-align: center;
-} */
+}
 
 
 .banner img{
@@ -254,6 +270,9 @@ p, ul{
     margin-bottom: 1em;
 }
 
+.show{
+    display: flex;
+}
 
 @media (max-width: 768px){
     html{
@@ -263,14 +282,15 @@ p, ul{
         display: none;
     }
 
-    .header i{
+    #bar{
         display: block;
         color: rgb(104, 102, 102);
         font-size:2.5em;
         border: 1px solid rgb(184, 181, 181);
         border-radius: 5px;
         padding: 0.2em 0.5em;
-    }
+        cursor: pointer;
+    } 
 
     .banner img{
         height: 50vh; 

@@ -13,15 +13,26 @@
 //     btn.innerHTML = "THANKS!"
 // }
 
-// let modal = document.querySelector(".modal");
-// let signin = document.querySelector("#signin");
+let modal = document.querySelector(".modal");
+let signin = document.querySelector("#signin");
 
-// signin.onclick = function(){
-//     modal.style.display = "block"
-// }
+signin.onclick = function(){
+    modal.style.display = "block"
+}
 
-// window.onclick = function(e){
-//     if (e.target == modal){
-//         modal.style.display = "none";
-//     }
-// }
+window.onclick = function(e){
+    if (e.target == modal){
+        modal.style.display = "none";
+    }
+}
+
+
+let menu = document.querySelector("#bar");
+let hidden = document.querySelector(".mobileMenu");
+
+menu.onclick = function(){
+        hidden.classList.toggle ("show");
+}
+
+
+
